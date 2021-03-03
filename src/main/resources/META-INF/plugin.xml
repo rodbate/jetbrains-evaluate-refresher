@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.github.rodbate.intellijevaluaterefresher</id>
+    <id>com.github.rodbate.jetbrains-evaluate-refresher</id>
     <name>intellij-evaluate-refresher</name>
     <vendor>rodbate</vendor>
 
@@ -8,12 +8,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.rodbate.intellijevaluaterefresher.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.rodbate.intellijevaluaterefresher.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.rodbate.jetbrains.evaluate.refresher.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.rodbate.jetbrains.evaluate.refresher.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.rodbate.intellijevaluaterefresher.listeners.MyProjectManagerListener"
+        <listener class="com.github.rodbate.jetbrains.evaluate.refresher.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

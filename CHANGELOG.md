@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# intellij-evaluate-refresher Changelog
+# jetbrains-evaluate-refresher Changelog
 
 ## [Unreleased]
 ### Added

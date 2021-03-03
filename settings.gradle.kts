@@ -1,1 +1,1 @@
-rootProject.name = "intellij-evaluate-refresher"
+rootProject.name = "jetbrains-evaluate-refresher"
