@@ -1,19 +1,19 @@
 <idea-plugin>
     <id>com.github.rodbate.jetbrains-evaluate-refresher</id>
-    <name>intellij-evaluate-refresher</name>
+    <name>jetbrains-evaluate-refresher</name>
     <vendor>rodbate</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.rodbate.jetbrains.evaluate.refresher.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.rodbate.jetbrains.evaluate.refresher.services.MyProjectService"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.rodbate.jetbrains.evaluate.refresher.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <!-- actions -->
+    <actions>
+        <action id="com.github.rodbate.jetbrains.evaluate.refresher.actions.RefreshEvalAction"
+                class="com.github.rodbate.jetbrains.evaluate.refresher.actions.RefreshEvalAction"
+                text="Refresh Eval" description="Refresh evaluate"
+                icon="EvalIcons.EVAL_TOOLBAR_BUTTON_ICON">
+            <add-to-group group-id="ToolbarRunGroup" anchor="last" />
+        </action>
+    </actions>
 </idea-plugin>
