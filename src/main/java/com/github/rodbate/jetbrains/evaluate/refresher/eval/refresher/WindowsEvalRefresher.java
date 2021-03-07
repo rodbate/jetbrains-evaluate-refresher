@@ -22,15 +22,11 @@ public class WindowsEvalRefresher extends AbstractEvalRefresher {
     }
 
     private void deleteWinRegistry() throws IOException, InterruptedException {
-        String productName = ApplicationNamesInfo.getInstance()
-            .getProductName()
-            .toLowerCase();
-
         Process process = new ProcessBuilder()
             .command(
                 "reg",
                 "delete",
-                String.format("\"HKEY_CURRENT_USER\\Software\\JavaSoft\\Prefs\\jetbrains\\%s\"", productName),
+                String.format("\"HKEY_CURRENT_USER\\Software\\JavaSoft\\Prefs\\jetbrains\\%s\"", getProductName()),
                 "/f")
             .redirectErrorStream(true)
             .start();
