@@ -1,4 +1,4 @@
-package com.github.rodbate.jetbrains.evaluate.refresher.eval;
+package com.github.rodbate.jetbrains.evaluate.refresher.eval.refresher;
 
 /**
  * Evaluate refresher common interface
