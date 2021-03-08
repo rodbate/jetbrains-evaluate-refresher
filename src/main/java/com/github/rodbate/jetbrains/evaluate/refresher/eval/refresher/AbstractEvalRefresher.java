@@ -1,16 +1,16 @@
 package com.github.rodbate.jetbrains.evaluate.refresher.eval.refresher;
 
-import com.intellij.openapi.application.ApplicationNamesInfo;
-import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.util.JDOMUtil;
-import com.intellij.openapi.util.io.FileUtil;
-import org.jdom.Element;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
+import com.intellij.openapi.application.ApplicationNamesInfo;
+import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.util.JDOMUtil;
+import com.intellij.openapi.util.io.FileUtil;
+import org.jdom.Element;
 
 /**
  * @author rodbate
@@ -34,7 +34,8 @@ public abstract class AbstractEvalRefresher implements EvalRefresher {
         for (Element child : new ArrayList<>(root.getChildren("component"))) {
             if (child.getAttributeValue("name").equals("PropertiesComponent")) {
                 for (Element c : new ArrayList<>(child.getChildren("property"))) {
-                    if (c.getAttributeValue("name").startsWith("evlsprt")) {
+                    if (c.getAttributeValue("name")
+                        .startsWith("evlsprt")) {
                         c.detach();
                     }
                 }
@@ -48,7 +49,9 @@ public abstract class AbstractEvalRefresher implements EvalRefresher {
     }
 
     protected String getProductName() {
-        return ApplicationNamesInfo.getInstance().getProductName().toLowerCase();
+        return ApplicationNamesInfo.getInstance()
+            .getProductName()
+            .toLowerCase();
     }
 
     protected void doRefreshPlatform() throws Exception {

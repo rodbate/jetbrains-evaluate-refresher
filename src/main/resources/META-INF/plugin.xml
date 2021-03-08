@@ -16,4 +16,9 @@
             <add-to-group group-id="ToolbarRunGroup" anchor="last" />
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.github.rodbate.jetbrains.evaluate.refresher.eval.checker.EvaluationExpiredChecker"/>
+    </extensions>
+
 </idea-plugin>
