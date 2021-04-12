@@ -3,6 +3,7 @@
 # jetbrains-evaluate-refresher Changelog
 
 ## [Unreleased]
+## [1.0.3]
 - Upgrade pluginUntilBuild version
 
 ## [1.0.2]
