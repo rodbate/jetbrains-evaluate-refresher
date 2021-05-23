@@ -3,6 +3,7 @@
 # jetbrains-evaluate-refresher Changelog
 
 ## [Unreleased]
+## [1.0.4]
 - fix mac eval refresh
 
 ## [1.0.3]
