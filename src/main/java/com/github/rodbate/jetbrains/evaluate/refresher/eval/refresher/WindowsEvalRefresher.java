@@ -22,21 +22,13 @@ public class WindowsEvalRefresher extends AbstractEvalRefresher {
     }
 
     private void deleteWinRegistry() throws IOException, InterruptedException {
-        Process process = new ProcessBuilder()
-            .command(
-                "reg",
-                "delete",
-                String.format("\"HKEY_CURRENT_USER\\Software\\JavaSoft\\Prefs\\jetbrains\\%s\"", getProductName()),
-                "/f")
-            .redirectErrorStream(true)
-            .start();
-
-        int exitCode = process.waitFor();
-        if (exitCode == 0) {
-            return;
-        }
-
-        String errorMsg = FileUtil.loadTextAndClose(new InputStreamReader(process.getInputStream(), Charset.defaultCharset()));
-        throw new RuntimeException("Delete windows registry error: " + errorMsg);
+        execCommands(
+            "cmd.exe",
+            "/c",
+            "reg",
+            "delete",
+            String.format("\"HKEY_CURRENT_USER\\Software\\JavaSoft\\Prefs\\jetbrains\\%s\"", getProductName()),
+            "/f"
+        );
     }
 }

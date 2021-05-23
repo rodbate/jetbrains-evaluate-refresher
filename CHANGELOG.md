@@ -3,6 +3,8 @@
 # jetbrains-evaluate-refresher Changelog
 
 ## [Unreleased]
+- fix mac eval refresh
+
 ## [1.0.3]
 - Upgrade pluginUntilBuild version
 
